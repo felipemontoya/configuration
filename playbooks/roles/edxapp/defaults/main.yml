@@ -480,12 +480,7 @@ lms_auth_config:
       OPTIONS:
         mappings: $EDXAPP_XML_MAPPINGS
         stores:
-          xml:
-            ENGINE: 'xmodule.modulestore.xml.XMLModuleStore'
-            OPTIONS:
-              data_dir: $edxapp_course_data_dir
-              default_class: 'xmodule.hidden_module.HiddenDescriptor'
-          default:
+          - NAME: 'draft'
             OPTIONS:
               default_class: 'xmodule.hidden_module.HiddenDescriptor'
               host: $EDXAPP_MONGO_HOSTS
@@ -498,6 +493,11 @@ lms_auth_config:
               fs_root: $edxapp_course_data_dir
             ENGINE: 'xmodule.modulestore.mongo.MongoModuleStore'
             DOC_STORE_CONFIG: *edxapp_generic_default_docstore
+          - NAME: 'xml'
+            ENGINE: 'xmodule.modulestore.xml.XMLModuleStore'
+            OPTIONS:
+              data_dir: $edxapp_course_data_dir
+              default_class: 'xmodule.hidden_module.HiddenDescriptor'
     draft:
       <<: *edxapp_generic_default_modulestore
       ENGINE: 'xmodule.modulestore.mongo.DraftMongoModuleStore'
