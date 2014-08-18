@@ -6,11 +6,10 @@
     when: "'app' not in machine"
   sudo: True
   vars:
-    secure_dir: '../../../configuration-secure/ansible'
-    # this indicates the path to site-specific (with precedence)
-    # things like nginx template files
-    local_dir:  '../../../configuration-secure/ansible/local'
     not_prod: false
+    secure_dir: "../../../edx-secret/ansible"
+    local_dir: "../../../edx-secret/ansible/local"
+    nginx_template_dir: "../../../edx-secret/ansible/local/nginx/templates"
   vars_files:
     - "{{ secure_dir }}/vars/edxapp_prod_vars.yml"
     - "{{ secure_dir }}/vars/users.yml"
