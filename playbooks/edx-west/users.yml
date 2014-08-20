@@ -1,4 +1,4 @@
-- hosts: ~tag_Name_{{ machine }}_prod
+- hosts: ~tag_Name_{{ machine }}_{{ env }}
   sudo: True
   vars:
     secure_dir: '../../../edx-secret/ansible'
