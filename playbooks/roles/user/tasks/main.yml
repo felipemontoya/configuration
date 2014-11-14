@@ -131,7 +131,7 @@
 
 - name: copy additional authorized keys
   copy: >
-    content="{{ '\n'.join(item.authorized_keys) }}"
+    content="{{ item.authorized_keys }}"
     dest=/home/{{ item.name }}/.ssh/authorized_keys mode=0640
     owner={{ item.name }}
     mode=0440
