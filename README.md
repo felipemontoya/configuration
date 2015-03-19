@@ -39,4 +39,4 @@ For more information including installation instruction please see the [Configur
 
 For info on any large recent changes please see the [change log](https://github.com/edx/configuration/blob/master/CHANGELOG.md).
 
-This changes nothing. Just triggering travis
+This changes nothing. Just triggering travis. Which are more difficult than initialy thought of
